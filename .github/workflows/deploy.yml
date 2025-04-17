@@ -1,4 +1,4 @@
-name: Deploy Modern.js site to Pages
+name: Deploy React.js site to Pages
 
 on:
   # Runs on pushes targeting the main branch
@@ -40,15 +40,15 @@ jobs:
         id: setup_pages
         uses: actions/configure-pages@v5
 
-      - name: Deploy Modern.js
-        run: bun run deploy
+      - name: Build React.js
+        run: bun run build
         env:
           PAGES_BASE_PATH: ${{ steps.setup_pages.outputs.base_path }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./.output
+          path: ./dist
 
   deploy:
     environment:

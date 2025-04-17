@@ -1,4 +1,15 @@
-import ts from 'typescript';
+import type { Preview } from '@storybook/react';
+
+const preview: Preview = {
+  parameters: {
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
+    },
+  },
+};
 
 if (typeof document !== 'undefined') {
   const script = document.createElement('script');
@@ -11,3 +22,5 @@ if (typeof document !== 'undefined') {
     import('@/styles/globals.css');
   };
 }
+
+export default preview;

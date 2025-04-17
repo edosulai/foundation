@@ -45,9 +45,9 @@ jobs:
         with:
           path: |
             dist/
-          key: ${{ runner.os }}-modernjs-${{ hashFiles('**/bun.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          key: ${{ runner.os }}-modernjs-${{ hashFiles('**/bun.lock') }}
           restore-keys: |
-            ${{ runner.os }}-modernjs-${{ hashFiles('**/bun.lock') }}-
+            ${{ runner.os }}-modernjs-
 
       - name: Build with Modern.js
         run: bun run build

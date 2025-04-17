@@ -2,21 +2,27 @@
   "name": "foundation.edosulai.github.io",
   "version": "0.1.0",
   "scripts": {
-    "build-storybook": "storybook build",
-    "storybook": "storybook dev -p 6006",
-    "reset": "npx rimraf node_modules ./**/node_modules",
     "dev": "modern dev",
-    "build": "modern build && npm run build-storybook --output-dir ./dist/static/storybook",
-    "deploy": "modern deploy && npm run build-storybook --output-dir ./.output/static/storybook",
     "start": "modern start",
     "serve": "modern serve",
     "new": "modern new",
+
+    "build": "modern build && npm run build-storybook --output-dir ./dist/static/storybook",
+    "deploy": "modern deploy && npm run build-storybook --output-dir ./.output/static/storybook",
+
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+
     "lint": "biome check",
     "format": "biome format --write",
+
     "prepare": "simple-git-hooks",
-    "upgrade": "modern upgrade",
-    "commit": "npm run format && git add . && git commit"
+    "commit": "npm run format && git add . && git commit",
+
+    "reset": "npx rimraf node_modules ./**/node_modules",
+    "upgrade": "modern upgrade"
   },
+
   "engines": {
     "node": ">=16.18.1"
   },

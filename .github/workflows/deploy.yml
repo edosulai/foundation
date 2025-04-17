@@ -1,4 +1,4 @@
-name: Deploy Modern.js site to Pages
+name: Deploy React.js site to Pages
 
 on:
   # Runs on pushes targeting the main branch
@@ -40,16 +40,7 @@ jobs:
         id: setup_pages
         uses: actions/configure-pages@v5
 
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            dist/
-          key: ${{ runner.os }}-modernjs-${{ hashFiles('**/bun.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-modernjs-${{ hashFiles('**/bun.lock') }}-
-
-      - name: Build with Modern.js
+      - name: Build React.js
         run: bun run build
         env:
           PAGES_BASE_PATH: ${{ steps.setup_pages.outputs.base_path }}

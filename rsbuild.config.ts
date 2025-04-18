@@ -10,9 +10,9 @@ export default defineConfig({
     pluginModuleFederation({
       name: 'foundation',
       exposes: {
-        './card.atoms': './src/components/molecules/card.atoms.tsx',
+        './card.atoms': './src/components/atoms/card.atoms.tsx',
         './gradient-blob.atoms':
-          './src/components/molecules/gradient-blob.atoms.tsx',
+          './src/components/atoms/gradient-blob.atoms.tsx',
         './service-unavailable.molecules':
           './src/components/molecules/service-unavailable.molecules.tsx',
         './social-link.molecules':

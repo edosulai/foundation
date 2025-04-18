@@ -5,6 +5,9 @@ import { pluginReact } from '@rsbuild/plugin-react';
 import fs from 'fs-extra';
 
 export default defineConfig({
+  server: {
+    base: '/foundation-edosulai',
+  },
   plugins: [
     pluginReact(),
     pluginModuleFederation({

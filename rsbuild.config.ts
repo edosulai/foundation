@@ -5,16 +5,18 @@ import { pluginReact } from '@rsbuild/plugin-react';
 import fs from 'fs-extra';
 
 export default defineConfig({
-  server: {
-    base: '/foundation-edosulai',
-  },
   plugins: [
     pluginReact(),
     pluginModuleFederation({
       name: 'foundation',
       exposes: {
-        './toggle': './src/components/atoms/toggle.atoms.tsx',
-        './card': './src/components/atoms/card.atoms.tsx',
+        './card.atoms': './src/components/molecules/card.atoms.tsx',
+        './gradient-blob.atoms':
+          './src/components/molecules/gradient-blob.atoms.tsx',
+        './service-unavailable.molecules':
+          './src/components/molecules/service-unavailable.molecules.tsx',
+        './social-link.molecules':
+          './src/components/molecules/social-link.molecules.tsx',
       },
       shared: {
         react: { singleton: true, eager: true },

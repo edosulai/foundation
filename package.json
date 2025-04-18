@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "npm run build-storybook && rsbuild build",
-    "dev": "rsbuild dev --open",
+    "dev": "storybook dev -p 6006",
     "preview": "rsbuild preview",
-    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "biome check",
     "format": "biome format --write",

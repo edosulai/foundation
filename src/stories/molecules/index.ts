@@ -1,1 +1,1 @@
-export * from './header.stories';
+export * from './social-link.stories';

@@ -1,16 +1,5 @@
 import type { Preview } from '@storybook/react';
 
-const preview: Preview = {
-  parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
-  },
-};
-
 if (typeof document !== 'undefined') {
   const script = document.createElement('script');
   script.src = 'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4';
@@ -22,5 +11,16 @@ if (typeof document !== 'undefined') {
     import('@/styles/globals.css');
   };
 }
+
+const preview: Preview = {
+  parameters: {
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
+    },
+  },
+};
 
 export default preview;
